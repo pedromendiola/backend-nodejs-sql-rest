@@ -1,0 +1,47 @@
+//Teste de requisições REST - Funcionários
+@baseURL = http://localhost:4000/api
+@registro = 33333333324
+###
+// GET - Lista todos os funcionários
+GET {{baseURL}}/funcionarios
+Content-Type: application/json
+
+###
+// GET - Lista apenas um funcionário pelo registro
+GET {{baseURL}}/funcionarios/{{registro}}
+Content-Type: application/json
+
+###
+// POST - Inclui um novo funcionário
+POST {{baseURL}}/funcionarios
+Content-Type: application/json
+
+{
+    "registro":"33333333324",
+    "nome":"Lucas",
+    "tipo":"Mensalista",
+    "dataadmissao":"2021-03-27",
+    "valor": 1150,
+    "numero": 3
+
+}
+
+###
+// PUT - Altera um funcionário já existente
+PUT {{baseURL}}/funcionarios
+Content-Type: application/json
+
+{
+    "registro":"33333333324",
+    "nome":"João Lucas",
+    "tipo":"freelancer",
+    "dataadmissao":"2021-03-27",
+    "valor": 50,
+    "numero": 5
+
+}
+
+###
+// DELETE - Apaga um funcionário através do registro
+DELETE {{baseURL}}/funcionarios/{{registro}}
+Content-Type: application/json
